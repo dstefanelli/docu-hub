@@ -1,0 +1,16 @@
+{
+  "name": "docu-hub",
+  "private": true,
+  "workspaces": [
+    "packages/client"
+  ],
+  "scripts": {
+    "dev:server": "cd packages/server && go mod tidy && go run server.go",
+    "dev:client": "yarn workspace client dev",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "cross-env": "^7.0.3"
+  }
+}
