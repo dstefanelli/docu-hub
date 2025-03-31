@@ -1,12 +1,17 @@
-import "./style.css";
-import { setupCounter } from "./counter.ts";
+import "./styles/global.css";
+import { fetchDocuments } from "./api/fetchDocuments";
+import { renderDocumentList } from "./components/DocumentList";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`;
+const container = document.querySelector<HTMLDivElement>("#document-list");
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+async function init() {
+  try {
+    const documents = await fetchDocuments();
+    renderDocumentList(container, documents);
+  } catch (err) {
+    if (container) container.textContent = "Error loading documents";
+    console.error(err);
+  }
+}
+
+init();

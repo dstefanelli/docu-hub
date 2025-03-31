@@ -33,11 +33,31 @@
       </div>
     </header>
     <main class="container">
-      <section class="mt-5">
+      <section class="my-5">
         <header>
           <h1>Documents</h1>
         </header>
-        <div id="app"></div>
+        <main>
+          <div id="document-list" class="document-list"></div>
+        </main>
+
+        <template id="document-item-template">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <div class="card-content">
+                <strong class="card-version"></strong>
+                <div class="attachments text-center">
+                  <ul class="attachments-list"></ul>
+                </div>
+
+                <div class="contributors text-center">
+                  <ul class="contributors-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
       </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
