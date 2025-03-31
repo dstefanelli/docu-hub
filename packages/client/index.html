@@ -33,9 +33,27 @@
       </div>
     </header>
     <main class="container">
+      <div class="notification-wrapper" id="notifications">
+        <div class="notification">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="#000000"
+            class="bi bi-bell-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+            />
+          </svg>
+          <span class="notification-counter" id="notification-counter">0</span>
+          <span>New Document Added</span>
+        </div>
+      </div>
       <section class="my-5">
         <header>
-          <h1>Documents</h1>
+          <h1 class="section-title">Documents</h1>
         </header>
         <main>
           <div id="document-list" class="document-list"></div>
