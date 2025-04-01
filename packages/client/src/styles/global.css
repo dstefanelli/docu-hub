@@ -75,7 +75,60 @@ ol {
   justify-content: space-between;
 }
 
-.document-list {
+.btn-toggle-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.btn-toggle-list:active {
+  border-color: transparent !important;
+}
+
+.btn-toggle-list .list.active svg,
+.btn-toggle-list .grid.active svg {
+  fill: #000;
+}
+
+.grid-mode .list-view-heading {
+  display: none;
+}
+
+.list-view-heading {
+  display: flex;
+  gap: 10px;
+  padding: 1em;
+}
+
+.list-view-heading > div {
+  color: #77787a;
+  font-weight: 500;
+}
+
+.list-view .card {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.list-view .card-body {
+  display: flex;
+  gap: 10px;
+}
+
+.list-view-name {
+  flex: 0 0 35%;
+}
+
+.list-view-contributors {
+  flex: 0 0 30%;
+}
+
+.list-view-attachments {
+  flex: 0 0 35%;
+}
+
+.grid-view {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);

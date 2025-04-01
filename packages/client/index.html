@@ -11,7 +11,7 @@
     />
     <title>DocuHub</title>
   </head>
-  <body>
+  <body class="list-mode">
     <header class="header">
       <div class="container">
         <nav class="navbar justify-content-start">
@@ -73,12 +73,12 @@
               </div>
             </div>
             <div id="view-toggle">
-              <button class="btn d-flex" id="toggle-view-btn">
-                <span>
+              <button class="btn btn-toggle-list" id="toggle-view-btn">
+                <span class="list active">
                   <svg
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="#77787a"
                     class="bi bi-list-task"
                     viewBox="0 0 16 16"
                   >
@@ -95,11 +95,11 @@
                     />
                   </svg>
                 </span>
-                <span>
+                <span class="grid">
                   <svg
                     width="24"
                     height="24"
-                    fill="currentColor"
+                    fill="#77787a"
                     class="bi bi-grid-3x2-gap-fill"
                     viewBox="0 0 16 16"
                   >
@@ -115,12 +115,36 @@
 
         <!-- START: Document List -->
         <main>
-          <div id="document-list" class="document-list"></div>
+          <div class="list-view-heading">
+            <div class="list-view-name">Name</div>
+            <div class="list-view-contributors">Contributors</div>
+            <div class="list-view-contributors">Attachments</div>
+          </div>
+          <div id="document-list" class="list-view"></div>
         </main>
         <!-- END: Document List -->
 
-        <!-- START: Card Template -->
-        <template id="document-item-template">
+        <!-- START: Template List -->
+        <template id="template-list">
+          <div class="card">
+            <div class="card-body">
+              <div class="list-view-name">
+                <h5 class="card-title"></h5>
+                <strong class="card-version"></strong>
+              </div>
+              <div class="list-view-contributors contributors">
+                <ul class="contributors-list"></ul>
+              </div>
+              <div class="list-view-attachments attachments">
+                <ul class="attachments-list"></ul>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- END: Card Template -->
+
+        <!-- START: Template Grid -->
+        <template id="template-grid">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title"></h5>

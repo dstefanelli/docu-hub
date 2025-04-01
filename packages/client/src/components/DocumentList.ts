@@ -1,6 +1,10 @@
 import { Document } from "../types/document";
 
-export function renderDocumentList(container: any, documents: Document[]) {
+export function renderDocumentList(
+  container: any,
+  documents: Document[],
+  templateId: string
+) {
   container.innerHTML = "";
 
   if (documents.length === 0) {
@@ -8,9 +12,7 @@ export function renderDocumentList(container: any, documents: Document[]) {
     return;
   }
 
-  const template = document.getElementById(
-    "document-item-template"
-  ) as HTMLTemplateElement;
+  const template = document.getElementById(templateId) as HTMLTemplateElement;
 
   documents.forEach((doc) => {
     const clone = template.content.cloneNode(true) as HTMLElement;

@@ -10,18 +10,43 @@ const notificationCounterEl = document.querySelector<HTMLParagraphElement>(
   "#notification-counter"
 )!;
 const sortSelect = document.querySelector<HTMLSelectElement>("#sort-select")!;
+const toggleBtn =
+  document.querySelector<HTMLButtonElement>("#toggle-view-btn")!;
+const spanList = toggleBtn.querySelector(".list")!;
+const spanGrid = toggleBtn.querySelector(".grid")!;
 
+let currentView: "list" | "grid" = "list";
 let documents: Document[] = [];
 
+function updateViewToggleUI() {
+  const isGrid = currentView === "grid";
+
+  spanList.classList.toggle("active", !isGrid);
+  spanGrid.classList.toggle("active", isGrid);
+
+  toggleBtn.setAttribute(
+    "aria-label",
+    isGrid ? "Switch to grid view" : "Switch to list view"
+  );
+}
+
+toggleBtn.addEventListener("click", () => {
+  currentView = currentView === "list" ? "grid" : "list";
+  document.body.className = currentView === "grid" ? "grid-mode" : "list-mode";
+  documentList.className = currentView === "grid" ? "grid-view" : "list-view";
+  updateViewToggleUI();
+  sortDocuments(sortSelect.value);
+});
+
 function sortDocuments(criteria: string) {
-  const sorted = [...documents]; // clone to avoid mutating original
+  const sorted = [...documents];
 
   switch (criteria) {
     case "title":
       sorted.sort((a, b) => a.Title.localeCompare(b.Title));
       break;
     case "version":
-      sorted.sort((a, b) => b.Version.localeCompare(a.Version)); // string version
+      sorted.sort((a, b) => b.Version.localeCompare(a.Version));
       break;
     case "created":
       sorted.sort(
@@ -31,7 +56,8 @@ function sortDocuments(criteria: string) {
       break;
   }
 
-  renderDocumentList(documentList, sorted);
+  const templateId = currentView === "list" ? "template-list" : "template-grid";
+  renderDocumentList(documentList, sorted, templateId);
 }
 
 sortSelect.addEventListener("change", (e) => {
@@ -42,7 +68,7 @@ sortSelect.addEventListener("change", (e) => {
 async function init() {
   try {
     documents = await fetchDocuments();
-    sortDocuments(sortSelect.value); // render sorted on load
+    sortDocuments(sortSelect.value);
   } catch (err) {
     documentList.textContent = "Error loading documents";
     console.error(err);
