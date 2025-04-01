@@ -53,7 +53,8 @@
       </div>
       <!-- END: WS Notifications -->
 
-      <section class="my-5">
+      <!-- START: Document List -->
+      <section class="my-2">
         <header>
           <h1 class="section-title">Documents</h1>
           <div class="controls">
@@ -162,6 +163,91 @@
         </template>
         <!-- END: Card Template -->
       </section>
+      <!-- END: Document List -->
+
+      <!-- START: Document Creation -->
+      <section class="mb-5" id="create-document">
+        <div class="btn-container">
+          <button id="show-form-btn" class="btn btn-add-document add-doc-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-plus-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"
+              />
+            </svg>
+            Add document
+          </button>
+        </div>
+
+        <form
+          id="new-doc-form"
+          class="row gx-3 gy-2 align-items-center mt-4 d-none"
+        >
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <label for="doc-version" class="form-label">Title</label>
+              <input
+                class="form-control"
+                type="text"
+                id="doc-title"
+                placeholder="Document Title"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <label for="doc-version" class="form-label">Version</label>
+              <input
+                class="form-control"
+                type="text"
+                id="doc-version"
+                placeholder="(e.g. 1.0.0)"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <label for="doc-contributors" class="form-label"
+                >Contributors</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="doc-contributors"
+                placeholder="(comma-separated)"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <label for="doc-attachments" class="form-label"
+                >Attachments</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="doc-attachments"
+                placeholder="(comma-separated)"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Create</button>
+          </div>
+        </form>
+      </section>
+      <!-- END: Document Creation -->
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
