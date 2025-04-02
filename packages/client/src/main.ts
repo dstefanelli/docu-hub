@@ -1,10 +1,10 @@
-import "./styles/global.scss";
-import { setDocuments, getDocuments } from "./services/documents";
-import { fetchDocuments } from "./services/fetchDocuments";
-import { renderDocumentList } from "./components/DocumentList";
-import { connectToNotifications } from "./realtime/notificationSocket";
-import { setupNotificationCounter } from "./components/NotificationCounter";
-import { initializeForm } from "./form";
+import "@/styles/global.scss";
+import { setDocuments, getDocuments } from "@/services/documents";
+import { fetchDocuments } from "@/services/fetchDocuments";
+import { renderDocumentList } from "@/components/DocumentList";
+import { connectToNotifications } from "@/realtime/notificationSocket";
+import { setupNotificationCounter } from "@/components/NotificationCounter";
+import { initializeForm } from "@/form";
 
 let currentView: "list" | "grid" = "list";
 let sortValue: string = "";

@@ -1,4 +1,4 @@
-import type { Document } from "../types/document";
+import type { Document } from "@/types/document";
 
 export function createDocument(title: string, version: string): Document {
   const now = new Date().toISOString();

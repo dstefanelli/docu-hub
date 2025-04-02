@@ -1,4 +1,4 @@
-import { Document } from "../types/document";
+import { Document } from "@/types/document";
 
 export function renderDocumentList(
   container: any,

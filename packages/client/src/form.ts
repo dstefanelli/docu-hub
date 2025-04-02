@@ -1,5 +1,5 @@
-import { createDocument } from "./utils/createDocument";
-import { addDocument } from "./services/documents";
+import { createDocument } from "@/utils/createDocument";
+import { addDocument } from "@/services/documents";
 
 export function initializeForm(
   sortValue: string,

@@ -1,4 +1,4 @@
-import { NotificationMessage } from "../types/notification";
+import { NotificationMessage } from "@/types/notification";
 
 export function connectToNotifications(
   onMessage: (msg: NotificationMessage) => void
