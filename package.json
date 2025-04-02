@@ -7,7 +7,8 @@
   "scripts": {
     "dev:server": "cd packages/server && go mod tidy && go run server.go",
     "dev:client": "yarn workspace client dev",
-    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\""
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
+    "test:unit": "yarn workspace client test"
   },
   "devDependencies": {
     "concurrently": "^8.0.0",

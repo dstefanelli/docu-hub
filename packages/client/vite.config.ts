@@ -3,7 +3,7 @@ import path from "path";
 
 export default defineConfig({
   test: {
-    include: ["tests/**/*.{test,spec}.{ts}"],
+    include: ["tests/**/*.test.ts"],
   },
   css: {
     preprocessorOptions: {
