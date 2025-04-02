@@ -1,4 +1,4 @@
-import "./styles/global.css";
+import "./styles/global.scss";
 import { setDocuments, getDocuments } from "./services/documents";
 import { fetchDocuments } from "./services/fetchDocuments";
 import { renderDocumentList } from "./components/DocumentList";
@@ -30,6 +30,7 @@ sortSelect.addEventListener("change", (e) => {
 toggleBtn.addEventListener("click", () => {
   currentView = currentView === "list" ? "grid" : "list";
 
+  document.body.classList = currentView === "grid" ? "grid-mode" : "list-mode";
   documentList.className = currentView === "grid" ? "grid-view" : "list-view";
   spanList.classList.toggle("active", currentView === "list");
   spanGrid.classList.toggle("active", currentView === "grid");
