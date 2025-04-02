@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { createDocument } from "../src/utils/createDocument";
+import { createDocument } from "../../src/utils/createDocument";
 
 describe("createDocument", () => {
   const title = "Test Title";
