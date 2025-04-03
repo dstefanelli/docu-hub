@@ -10,6 +10,7 @@ This is a Vanilla TypeScript app built with Vite to visualize and manage documen
 - Bootstrap CDN and svg icons to speed up layout.
 - Vite to compile and serve the project.
 - Vitest to run unit testing.
+- Implemented as a **monorepo**, meaning both the frontend and backend are developed within a single repository to simplifies local development.
 
 ## 🚀 Features
 
