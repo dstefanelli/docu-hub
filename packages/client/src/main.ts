@@ -7,7 +7,7 @@ import { setupNotificationCounter } from "@/components/NotificationCounter";
 import { initializeForm } from "@/form";
 
 let currentView: "list" | "grid" = "list";
-let sortValue: string = "";
+let sortValue: string = "created";
 
 // Elements
 const documentList = document.querySelector<HTMLDivElement>("#document-list")!;
@@ -77,7 +77,7 @@ async function init() {
   try {
     const docs = await fetchDocuments();
     setDocuments(docs);
-    sortDocuments(sortSelect.value);
+    sortDocuments(sortValue);
   } catch (err) {
     documentList.textContent = "Error loading documents";
     console.error(err);

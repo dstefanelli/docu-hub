@@ -1,4 +1,5 @@
 import { Document } from "@/types/document";
+import { formatDate } from "@/utils/dateFormat";
 
 export function renderDocumentList(
   container: any,
@@ -24,6 +25,11 @@ export function renderDocumentList(
     (
       clone.querySelector(".card-version") as HTMLElement
     ).textContent = `Version ${doc.Version}`;
+
+    // Render dates
+    (
+      clone.querySelector(".card-date") as HTMLElement
+    ).textContent = `Created: ${formatDate(doc.CreatedAt)}`;
 
     // Render attachments
     const attachmentsList = clone.querySelector(
