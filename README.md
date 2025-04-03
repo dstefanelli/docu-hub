@@ -36,6 +36,11 @@ This is a Vanilla TypeScript app built with Vite to visualize and manage documen
 yarn install
 ```
 
+### Create Local Environment File
+
+1. Copy `.env.sample` to `.env.development`
+2. Ensure `.env.development` contains all necessary environment variables for local development.
+
 ### Run frontend
 
 ```
