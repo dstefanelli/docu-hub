@@ -51,4 +51,9 @@ describe("renderDocumentList", () => {
       "1.0.0"
     );
   });
+
+  it("renders a message when there are no documents", () => {
+    renderDocumentList(container, [], "template-list");
+    expect(container.textContent).toContain("No documents found.");
+  });
 });
